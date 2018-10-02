@@ -45,9 +45,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         public ViewHolder(View itemView) {
             super(itemView);
 
-            tv_name = (TextView)itemView.findViewById(R.id.tv_name);
-            tv_release_date = (TextView)itemView.findViewById(R.id.tv_version);
-            tv_trailer = (TextView)itemView.findViewById(R.id.tv_api_level);
+            tv_name = itemView.findViewById(R.id.tv_name);
+            tv_release_date = itemView.findViewById(R.id.tv_release_date);
+            tv_trailer = itemView.findViewById(R.id.tv_trailer);
 
         }
     }

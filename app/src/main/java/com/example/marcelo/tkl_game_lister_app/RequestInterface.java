@@ -6,5 +6,5 @@ import retrofit2.http.GET;
 public interface RequestInterface {
 
     @GET("s/1b7jlwii7jfvuh0/games")
-    Call<Response> getJson();
+    Call<Response> getJSON();
 }

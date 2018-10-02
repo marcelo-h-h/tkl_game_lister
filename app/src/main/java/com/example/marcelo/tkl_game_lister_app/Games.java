@@ -9,14 +9,15 @@ public class Games {
     private String image;
     private String release_date;
     private String trailer;
-    private String[] platforms;
+  //  private String[] platforms;
 
     public Games(String id, String name, String image, String release_date, String trailer, String[] platforms) {
         this.id = id;
         this.name = name;
         this.image = image;
+        this.release_date = release_date;
         this.trailer = trailer;
-        this.platforms = platforms;
+    //    this.platforms = platforms;
     }
 
     public String getId() {
@@ -59,11 +60,11 @@ public class Games {
         this.trailer = trailer;
     }
 
-    public String[] getPlatforms() {
-        return platforms;
-    }
+    //public String[] getPlatforms() {
+      //  return platforms;
+    //}
 
-    public void setPlatforms(String[] platforms) {
-        this.platforms = platforms;
-    }
+    //public void setPlatforms(String[] platforms) {
+      //  this.platforms = platforms;
+    //}
 }

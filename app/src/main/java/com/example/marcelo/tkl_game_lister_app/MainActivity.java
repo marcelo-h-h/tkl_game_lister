@@ -9,6 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -20,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Games> data;
     private Adapter adapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,20 +30,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        recyclerView = (RecyclerView)findViewById(R.id.games_cards_recycler_view);
+        recyclerView = findViewById(R.id.games_cards_recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
-        loadJson();
+        loadJSON();
     }
 
-    private void loadJson() {
+    private void loadJSON() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("dl.dropboxusercontent.com")
+                .baseUrl("https://dl.dropboxusercontent.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RequestInterface request = retrofit.create(RequestInterface.class);
-        Call<Response> call = request.getJson();
+        Call<Response> call = request.getJSON();
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
@@ -55,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
-                Log.d("Error", t.getMessage());
+                Log.d("Error",t.getMessage());
             }
+            
         });
-
     }
 }
+
