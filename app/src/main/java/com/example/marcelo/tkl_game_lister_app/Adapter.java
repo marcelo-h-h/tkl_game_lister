@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     private ArrayList<Games> games;
@@ -38,17 +41,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_name;
-        private TextView tv_release_date;
-        private TextView tv_trailer;
+        @BindView(R.id.tv_name) TextView tv_name;
+        @BindView(R.id.tv_release_date) TextView tv_release_date;
+        @BindView(R.id.tv_trailer) TextView tv_trailer;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            tv_name = itemView.findViewById(R.id.tv_name);
-            tv_release_date = itemView.findViewById(R.id.tv_release_date);
-            tv_trailer = itemView.findViewById(R.id.tv_trailer);
-
+            ButterKnife.bind(this, itemView);
         }
     }
 }
